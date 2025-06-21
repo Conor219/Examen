@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Attwell | Desarrollador Full-Stack</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        dark: '#1f2937',
+                        accent: '#38bdf8'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="bg-blue-500 w-10 h-10 rounded-lg flex items-center justify-center text-white">
+                        <i class="fas fa-laptop-code text-xl"></i>
+                    </div>
+                    <span class="ml-3 text-xl font-semibold text-gray-800">Daniel Attwell</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-primary font-medium transition">Inicio</a>
+                    <a href="#sobre-mi" class="text-gray-600 hover:text-primary font-medium transition">Sobre Mí</a>
+                    <a href="#experiencia" class="text-gray-600 hover:text-primary font-medium transition">Experiencia</a>
+                    <a href="#habilidades" class="text-gray-600 hover:text-primary font-medium transition">Habilidades</a>
+                    <a href="#proyectos" class="text-gray-600 hover:text-primary font-medium transition">Proyectos</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-primary font-medium transition">Contacto</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden py-2 border-t">
+                <div class="flex flex-col space-y-3">
+                    <a href="#inicio" class="text-gray-600 hover:text-primary font-medium px-4 py-2">Inicio</a>
+                    <a href="#sobre-mi" class="text-gray-600 hover:text-primary font-medium px-4 py-2">Sobre Mí</a>
+                    <a href="#experiencia" class="text-gray-600 hover:text-primary font-medium px-4 py-2">Experiencia</a>
+                    <a href="#habilidades" class="text-gray-600 hover:text-primary font-medium px-4 py-2">Habilidades</a>
+                    <a href="#proyectos" class="text-gray-600 hover:text-primary font-medium px-4 py-2">Proyectos</a>
+                    <a href="#contacto" class="text-gray-600 hover:text-primary font-medium px-4 py-2">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="gradient-bg pt-24 pb-20 md:py-40 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-white text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+                        Hola, soy <span class="text-accent">Daniel Attwell</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8">
+                        Desarrollador Full-Stack & Consultor de Sistemas
+                    </p>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#contacto" class="bg-white text-primary px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-300 shadow-lg">
+                            Contáctame
+                        </a>
+                        <a href="#proyectos" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-primary transition duration-300">
+                            Ver Proyectos
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                    <div class="bg-gray-200 border-2 border-dashed rounded-xl w-80 h-80 mx-auto md:ml-auto relative overflow-hidden">
+                        <!-- Placeholder for photo -->
+                        <div class="w-full h-full bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
+                            <div class="bg-white rounded-full w-48 h-48 flex items-center justify-center">
+                                <span class="text-8xl font-bold text-blue-600">DA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150">
+                <path fill="#f9fafb" fill-opacity="1" d="M0,64L48,74.7C96,85,192,107,288,122.7C384,139,480,149,576,138.7C672,128,768,96,864,90.7C960,85,1056,107,1152,117.3C1248,128,1344,128,1392,128L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 section-title">Sobre Mí</h2>
+            <div class="flex flex-col md:flex-row mt-12 items-center">
+                <div class="md:w-2/5 flex justify-center">
+                    <div class="relative">
+                        <div class="bg-gray-200 border-2 border-dashed rounded-xl w-64 h-64 overflow-hidden relative">
+                            <div class="w-full h-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center">
+                                <div class="bg-white rounded-full w-40 h-40 flex items-center justify-center">
+                                    <span class="text-6xl font-bold text-blue-600">DA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-indigo-200 rounded-full z-0"></div>
+                        <div class="absolute -top-6 -right-6 w-20 h-20 bg-blue-200 rounded-full z-0"></div>
+                    </div>
+                </div>
+                <div class="md:w-3/5 mt-12 md:mt-0 md:pl-12">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Daniel Antonio Attwell Pompa</h3>
+                    <p class="text-gray-600 mb-4">
+                        Tengo 24 años y actualmente curso el octavo cuatrimestre de Ingeniería en Sistemas Computacionales en la Universidad Kino. Desde muy joven he estado fascinado por la tecnología, especialmente por el desarrollo web y móvil.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Me apasiona crear soluciones innovadoras, eficientes y de alta calidad. Cuando no estoy codificando, disfruto aprendiendo nuevas tecnologías, mejorando mis habilidades y compartiendo conocimiento con la comunidad.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <div class="bg-white rounded-lg shadow px-4 py-2 flex items-center">
+                            <i class="fas fa-graduation-cap text-blue-500 mr-2"></i>
+                            <span>Universidad Kino</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow px-4 py-2 flex items-center">
+                            <i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>
+                            <span>Hermosillo, México</span>
+                        </div>
+                        <div class="bg-white rounded-lg shadow px-4 py-2 flex items-center">
+                            <i class="fas fa-briefcase text-blue-500 mr-2"></i>
+                            <span>Disponible para trabajar</span>
+                        </div>
+                    </div>
+                    <a href="#contacto" class="inline-block bg-primary hover:bg-secondary text-white font-medium py-2 px-6 rounded-lg transition duration-300">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experiencia" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 section-title">Experiencia Laboral</h2>
+            
+            <div class="mt-16 relative">
+                <div class="absolute top-0 left-8 bottom-0 w-1 bg-gray-200 md:left-1/2 md:-ml-1"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- First experience -->
+                    <div class="timeline-item relative pl-10 md:pl-0 md:pr-10 md:text-right">
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-primary font-medium mb-2">2025 - Actualidad</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Gobierno del Estado de Sonora</h3>
+                            <div class="text-blue-500 font-medium mb-4">Practicante de Desarrollo de Sistemas</div>
+                            <p class="text-gray-600">
+                                Desarrollo y mantenimiento de sistemas para mejorar los servicios públicos mediante soluciones tecnológicas innovadoras.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Second experience -->
+                    <div class="timeline-item relative pl-10 md:pl-10 md:text-left">
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-primary font-medium mb-2">2023 - Actualidad</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">HR Consultant</h3>
+                            <div class="text-blue-500 font-medium mb-4">Gerente de Relaciones</div>
+                            <p class="text-gray-600">
+                                Gestión de relaciones con clientes clave y desarrollo de estrategias para optimizar recursos humanos.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Third experience -->
+                    <div class="timeline-item relative pl-10 md:pl-0 md:pr-10 md:text-right">
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-primary font-medium mb-2">2019 - Actualidad</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Bitrix24 Partner</h3>
+                            <div class="text-blue-500 font-medium mb-4">Socio Desarrollador</div>
+                            <p class="text-gray-600">
+                                Implementación de soluciones personalizadas basadas en Bitrix24 para empresas de diversos sectores.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Fourth experience -->
+                    <div class="timeline-item relative pl-10 md:pl-10 md:text-left">
+                        <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                            <div class="text-primary font-medium mb-2">2021 - 2022</div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">AST Vacations</h3>
+                            <div class="text-blue-500 font-medium mb-4">Operaciones TI</div>
+                            <p class="text-gray-600">
+                                Gestión de sistemas tecnológicos y soporte técnico para mejorar los procesos operativos de la empresa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="habilidades" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 section-title">Mis Habilidades</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mt-4">
+                He desarrollado diversas habilidades técnicas a lo largo de mi formación profesional y experiencia laboral.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+                <!-- Frontend Skills -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-laptop-code text-blue-500 mr-3 text-2xl"></i>
+                        Desarrollo Frontend
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">HTML5 / CSS3</span>
+                                <span class="font-medium text-blue-500">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">JavaScript</span>
+                                <span class="font-medium text-blue-500">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">React</span>
+                                <span class="font-medium text-blue-500">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Tailwind CSS</span>
+                                <span class="font-medium text-blue-500">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Backend Skills -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-server text-blue-500 mr-3 text-2xl"></i>
+                        Desarrollo Backend
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">Node.js</span>
+                                <span class="font-medium text-blue-500">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">PHP / Laravel</span>
+                                <span class="font-medium text-blue-500">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">SQL / MySQL</span>
+                                <span class="font-medium text-blue-500">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium text-gray-700">MongoDB</span>
+                                <span class="font-medium text-blue-500">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Skills -->
+                <div class="md:col-span-2">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-cogs text-blue-500 mr-3 text-2xl"></i>
+                        Otras Habilidades & Herramientas
+                    </h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center text-center card-hover">
+                            <i class="fab fa-docker text-3xl text-blue-500 mb-2"></i>
+                            <span class="font-medium">Docker</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center text-center card-hover">
+                            <i class="fas fa-infinity text-3xl text-blue-500 mb-2"></i>
+                            <span class="font-medium">Redis</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center text-center card-hover">
+                            <i class="fab fa-wordpress text-3xl text-blue-500 mb-2"></i>
+                            <span class="font-medium">WordPress</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center text-center card-hover">
+                            <i class="fab fa-bitrix text-3xl text-blue-500 mb-2"></i>
+                            <span class="font-medium">Bitrix24</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center text-center card-hover">
+                            <i class="fas fa-robot text-3xl text-blue-500 mb-2"></i>
+                            <span class="font-medium">IA Generativa</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center text-center card-hover">
+                            <i class="fas fa-cloud text-3xl text-blue-500 mb-2"></i>
+                            <span class="font-medium">Cloud Services</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center text-center card-hover">
+                            <i class="fab fa-github text-3xl text-blue-500 mb-2"></i>
+                            <span class="font-medium">GitHub</span>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl shadow-md flex flex-col items-center text-center card-hover">
+                            <i class="fas fa-terminal text-3xl text-blue-500 mb-2"></i>
+                            <span class="font-medium">Terminal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 section-title">Mis Proyectos</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mt-4">
+                He desarrollado diversos proyectos profesionales y personales a lo largo de mi carrera.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                <!-- Agareoz Project -->
+                <div class="project-card">
+                    <div class="project-inner h-full">
+                        <div class="project-front bg-white rounded-xl shadow-md overflow-hidden h-full">
+                            <div class="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center">
+                                <i class="fas fa-gamepad text-white text-6xl"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Agareoz</h3>
+                                <p class="text-gray-600 mb-4">Servidor privado de Agar.io con más de 50,000 usuarios</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-sm font-medium">Node.js</span>
+                                    <span class="bg-indigo-100 text-indigo-600 rounded-full px-3 py-1 text-sm font-medium">WebSockets</span>
+                                    <span class="bg-purple-100 text-purple-600 rounded-full px-3 py-1 text-sm font-medium">Canvas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-back absolute top-0 left-0 w-full h-full bg-gradient-to-r from-indigo-600 to-blue-500 rounded-xl p-6 text-white flex flex-col justify-center items-center">
+                            <h3 class="text-xl font-bold mb-3">Detalles del Proyecto</h3>
+                            <p class="text-center mb-4">
+                                Plataforma de juego multijugador con más de 50,000 usuarios registrados. Desarrollo de backend con Node.js, WebSockets y tecnologías de renderizado Canvas.
+                            </p>
+                            <div class="flex space-x-2">
+                                <span class="bg-blue-600 text-white rounded-full px-3 py-1 text-sm font-medium">2015-2017</span>
+                                <a href="#" class="bg-white text-indigo-600 rounded-full px-3 py-1 text-sm font-medium hover:bg-indigo-100 transition">
+                                    Ver Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bitrix24 Solutions -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-emerald-600 flex items-center justify-center">
+                        <i class="fas fa-briefcase text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Soluciones Bitrix24</h3>
+                        <p class="text-gray-600 mb-4">Implementaciones empresariales personalizadas</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 text-green-600 rounded-full px-3 py-1 text-sm font-medium">Bitrix24</span>
+                            <span class="bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-sm font-medium">JavaScript</span>
+                            <span class="bg-pink-100 text-pink-600 rounded-full px-3 py-1 text-sm font-medium">PHP</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sistemas Gobierno Sonora -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center">
+                        <i class="fas fa-building text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Sistemas Gubernamentales</h3>
+                        <p class="text-gray-600 mb-4">Desarrollo de sistemas para gobierno de Sonora</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-600 rounded-full px-3 py-1 text-sm font-medium">Laravel</span>
+                            <span class="bg-indigo-100 text-indigo-600 rounded-full px-3 py-1 text-sm font-medium">PostgreSQL</span>
+                            <span class="bg-yellow-100 text-yellow-600 rounded-full px-3 py-1 text-sm font-medium">Docker</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education Projects -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-r from-yellow-500 to-amber-600 flex items-center justify-center">
+                        <i class="fas fa-book text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Sistemas Educativos</h3>
+                        <p class="text-gray-600 mb-4">Plataformas de aprendizaje y recursos educativos</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-yellow-100 text-yellow-600 rounded-full px-3 py-1 text-sm font-medium">React</span>
+                            <span class="bg-blue-100 text-blue-600 rounded-full px-3 py-1 text-sm font-medium">Node.js</span>
+                            <span class="bg-indigo-100 text-indigo-600 rounded-full px-3 py-1 text-sm font-medium">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 section-title">Contáctame</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mt-4">
+                ¿Interesado en trabajar juntos? ¡Envíame un mensaje y te responderé lo antes posible!
+            </p>
+            
+            <div class="flex flex-col lg:flex-row gap-12 mt-16">
+                <div class="lg:w-1/2">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Información de Contacto</h3>
+                    
+                    <div class="space-y-6 bg-gray-50 p-6 rounded-xl shadow-md">
+                        <div class="flex items-start">
+                            <div class="contact-icon bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-phone text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Teléfono</h4>
+                                <p class="text-gray-600">(322) 277 8069</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="contact-icon bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Correo Electrónico</h4>
+                                <p class="text-gray-600">daniel.attwell3000@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="contact-icon bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-github text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">GitHub</h4>
+                                <p class="text-gray-600">Conor219</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="contact-icon bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Ubicación</h4>
+                                <p class="text-gray-600">Hermosillo, Sonora, México</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <h4 class="font-bold text-gray-800 mb-4">Sígueme</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="contact-icon w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="contact-icon w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="contact-icon w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="contact-icon w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Envíame un Mensaje</h3>
+                    
+                    <form class="bg-gray-50 p-6 rounded-xl shadow-md">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium mb-2" for="name">Nombre</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium mb-2" for="email">Correo Electrónico</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium mb-2" for="subject">Asunto</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium mb-2" for="message">Mensaje</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-medium py-3 px-6 rounded-lg transition duration-300">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">© 2025 Daniel Attwell. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
